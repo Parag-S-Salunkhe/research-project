@@ -20,26 +20,26 @@ const signup = async function (req, res) {
             'firstName': req.data.firstName,
             'lastName': req.data.lastName,
             'phoneNumber': req.data.phoneNumber,
-            'nationalCode': req.data.nationalCode,
+            'username': req.data.username,
             'email': req.data.email,
             'role': req.data.role
         };
         const hashedPassword = hash.generate(req.data.password);
         const authData = {
-            'username': req.data.nationalCode,
+            'username': req.data.username,
             'password': hashedPassword
         };
         const salaryData = {
             'base': '4000.000IRR'
         }
         setTimeout(function() {
-            insertDataInDB(req.data.nationalCode, authData, res, 0);
+            insertDataInDB(req.data.username, authData, res, 0);
         }, 100);
         setTimeout(function() {
-            insertDataInDB(req.data.nationalCode, personalData, res, 1);
+            insertDataInDB(req.data.username, personalData, res, 1);
         }, 300);
         setTimeout(function() {
-            insertDataInDB(req.data.nationalCode, salaryData, res, 3);
+            insertDataInDB(req.data.username, salaryData, res, 3);
         }, 500);
         setTimeout(function() {
             sendResponse(res, statusCodes.SUCCESS, messages.SIGNUP_SUCCESS);

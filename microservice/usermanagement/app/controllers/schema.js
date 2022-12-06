@@ -23,7 +23,7 @@ exports.signupSchema = {
             "type": "string",
             "minLength": 10
         },
-        "nationalCode": {
+        "username": {
             "type": "string",
             "minLength": 6
         },
@@ -39,7 +39,7 @@ exports.signupSchema = {
         "lastName", 
         "phoneNumber", 
         "email", 
-        "nationalCode", 
+        "username", 
         "role"
     ]
 }

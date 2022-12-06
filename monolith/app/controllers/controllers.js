@@ -54,13 +54,11 @@ const signup = async function (req, res) {
 const login = function (req, res) {
     console.log("=======InLoginFunction\n");
     try {
-        console.log("patel")
         dataValidator(req, res, loginSchema);
         if(req.headers.cookie) {
             sendResponse(res, statusCodes.FORBBIDEN, messages.FORBBIDEN);
             return;
         }
-        console.log("ashish")
         let db = DatabaseConnection()
         connectToDB(0);
         db.hgetall(req.data.username, function(err, credentials) {
@@ -69,7 +67,6 @@ const login = function (req, res) {
                 sendResponse(res, statusCodes.NOT_FOUND, messages.NOT_FOUND);
                 return;
             }
-            console.log("Helllo")
             if(credentials) {
                 if(hash.verify(req.data.password, credentials.password)) {
                     const token = jwt.sign({username: credentials.username}, PRIVATE_KEY);
