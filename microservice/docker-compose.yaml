@@ -44,5 +44,5 @@ services:
 
     redis:
         image: redis:latest
-        container_name: heuristic_margulis
+        container_name: heuristic_margulis_2
         restart: unless-stopped
