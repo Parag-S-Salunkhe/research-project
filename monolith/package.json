@@ -6,11 +6,6 @@
   "scripts": {
     "test": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.partdp.ir/internship/projects/farzaneh.hallaji/employeeservice.git"
-  },
-  "author": "Farzaneh Hallaji",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
