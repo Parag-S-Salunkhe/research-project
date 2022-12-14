@@ -1,6 +1,13 @@
 const controllers = require('../controllers/controllers');
 
 exports.routes = {
+    '/home': {
+        GET: {
+            function: controllers.home,
+            dataNeeded: false,
+            queryNeeded: false
+        }
+    },
     '/signup': {
         POST: {
             function: controllers.signup,

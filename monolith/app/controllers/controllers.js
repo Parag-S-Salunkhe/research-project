@@ -12,6 +12,17 @@ const { decode } = require('jsonwebtoken');
 const PRIVATE_KEY = 'EMPAUTH';
 
 /* Auth service */
+
+const home = async function (req, res) {
+    console.log("=======Home Function\n");
+    try {
+        sendResponse(res, statusCodes.SUCCESS, "Server is running");
+    }
+    catch(error) {
+        errorHandler(error, 'home-function');
+    }
+}
+
 const signup = async function (req, res) {
     console.log("=======InSignUpFunction\n");
     try {
@@ -256,6 +267,7 @@ const getPayroll = function (req, res) {
 
 
 module.exports = {
+    home,
     signup,
     login,
     logout,
